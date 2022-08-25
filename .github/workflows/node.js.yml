@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,7 +24,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        cache: 'yarn'
     - run: yarn
     - run: yarn build
     #- run: yarn test
