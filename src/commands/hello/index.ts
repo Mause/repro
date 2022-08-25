@@ -1,4 +1,5 @@
 import {Command, Flags} from '@oclif/core'
+import { Octokit } from '@octokit/rest';
 
 export default class Hello extends Command {
   static description = 'Say hello'
@@ -17,6 +18,12 @@ hello friend from oclif! (./src/commands/hello/index.ts)
 
   async run(): Promise<void> {
     const {args, flags} = await this.parse(Hello)
+
+    const issue = await new Octokit().issues.get({
+      owner: 'duckdb',
+      repo: 'duckdb',
+      issue_number: 4589
+    });
 
     this.log(`hello ${args.person} from ${flags.from}! (./src/commands/hello/index.ts)`)
   }
