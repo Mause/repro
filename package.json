@@ -19,7 +19,6 @@
   "dependencies": {
     "@oclif/core": "^1.13.10",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.0.1",
     "@octokit/rest": "^19.0.4"
   },
   "devDependencies": {
@@ -44,8 +43,7 @@
     "dirname": "repro",
     "commands": "./dist/commands",
     "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
+      "@oclif/plugin-help"
     ],
     "topicSeparator": " ",
     "topics": {
