@@ -1,6 +1,6 @@
 {
   "name": "@mause/repro",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Reproduce a GitHub issue quickly and easily",
   "author": "Elliana May @Mause",
   "bin": {
