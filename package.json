@@ -9,7 +9,7 @@
   "homepage": "https://github.com/Mause/repro",
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "Mause/repro",
+  "repository": "https://github.com/Mause/repro.git",
   "files": [
     "/bin",
     "/dist",
