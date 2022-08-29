@@ -30,7 +30,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`repro load ISSUE`](#repro-load-issue)
-* [`repro run PERSON`](#repro-run-person)
+* [`repro run ISSUE`](#repro-run-issue)
 
 ## `repro load ISSUE`
 
@@ -50,29 +50,25 @@ EXAMPLES
   $ repro load owner/repo/issue_id
 ```
 
-_See code: [dist/commands/load/index.ts](https://github.com/Mause/repro/blob/v0.0.0/dist/commands/load/index.ts)_
+_See code: [dist/commands/load.ts](https://github.com/Mause/repro/blob/v0.0.0/dist/commands/load.ts)_
 
-## `repro run PERSON`
+## `repro run ISSUE`
 
-Say hello
+Load code blocks from an issue into a file and run them
 
 ```
 USAGE
-  $ repro run [PERSON] -f <value>
+  $ repro run [ISSUE]
 
 ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Whom is saying hello
+  ISSUE  Issue to load and run - either a URL or owner/name/issue_id triplet
 
 DESCRIPTION
-  Say hello
+  Load code blocks from an issue into a file and run them
 
 EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
+  $ repro run owner/repo/issue_id
 ```
 
-_See code: [dist/commands/run/index.ts](https://github.com/Mause/repro/blob/v0.0.0/dist/commands/run/index.ts)_
+_See code: [dist/commands/run.ts](https://github.com/Mause/repro/blob/v0.0.0/dist/commands/run.ts)_
 <!-- commandsstop -->
