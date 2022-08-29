@@ -60,5 +60,8 @@
   "keywords": [
     "oclif"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "types": "dist/index.d.ts"
 }
