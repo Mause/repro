@@ -56,6 +56,6 @@ function* extractCode(markdown: TxtNode): Generator<[string, string]> {
 }
 
 function generateShebang(arg0: string) {
-    return '!/usr/bin/env python3';
+    return '#!/usr/bin/env python3';
 }
 
