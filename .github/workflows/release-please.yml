@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
-          release-type: nodejs
+          release-type: node
           package-name: '@mause/repro'
           token: ${{ secrets.GITHUB_TOKEN }}
