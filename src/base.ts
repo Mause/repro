@@ -36,9 +36,9 @@ function extract(issue: string) {
   let owner, repo, issue_number, _;
   try {
     issue = new URL(issue).pathname.slice(1);
-    ([owner, repo, _, issue_number] = issue.split("/"));
+    [owner, repo, _, issue_number] = issue.split("/");
   } catch (e) {
-    ([owner, repo, issue_number] = issue.split("/"));
+    [owner, repo, issue_number] = issue.split("/");
   }
 
   if (!issue_number) {
@@ -58,6 +58,5 @@ function* extractCode(markdown: TxtNode): Generator<[string, string]> {
 }
 
 function generateShebang(arg0: string) {
-    return '#!/usr/bin/env python3';
+  return "#!/usr/bin/env python3";
 }
-
