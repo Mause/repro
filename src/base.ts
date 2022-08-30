@@ -13,7 +13,7 @@ export default abstract class extends Command {
 
     const markdown = parse(details.data.body ?? "");
 
-    const root_blocks: Record<string, string[]> = { py: [], ts: [] };
+    const root_blocks: Record<FileType, string[]> = { py: [], ts: [] };
     for (const [lang, block] of extractCode(markdown)) {
       if (["py", "python"].includes(lang)) {
         root_blocks.py.push(block);
@@ -31,7 +31,7 @@ export default abstract class extends Command {
         const filename = `${folder}/${issue_number}.${lang}`;
         await writeFile(
           filename,
-          [generateShebang(lang)].concat(blocks).join("\n"),
+          [generateShebang(lang as FileType)].concat(blocks).join("\n"),
           { mode: "755" }
         );
 
@@ -74,6 +74,8 @@ function* extractCode(markdown: TxtNode): Generator<[string, string]> {
   }
 }
 
-function generateShebang(arg0: string) {
-  return "#!/usr/bin/env python3";
+type FileType = "ts" | "py";
+
+function generateShebang(blockType: FileType) {
+  return `#!/usr/bin/env ${blockType == "py" ? "python3" : "node"}`;
 }
