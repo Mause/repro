@@ -13,22 +13,35 @@ export default abstract class extends Command {
 
     const markdown = parse(details.data.body ?? "");
 
-    const blocks = [generateShebang("python")];
+    const root_blocks: Record<string, string[]> = { py: [], ts: [] };
     for (const [lang, block] of extractCode(markdown)) {
-      if (lang == "py" || lang == "python") {
-        blocks.push(block);
+      if (["py", "python"].includes(lang)) {
+        root_blocks.py.push(block);
+      } else if (["js", "javascript", "typescript"].includes(lang)) {
+        root_blocks.ts.push(block);
       }
     }
 
     const folder = `${owner}/${repo}`;
     await mkdir(folder, { recursive: true });
 
-    const filename = `${folder}/${issue_number}.py`;
-    await writeFile(filename, blocks.join("\n"), { mode: "755" });
+    const filenames = [];
+    for (const [lang, blocks] of Object.entries(root_blocks)) {
+      if (blocks.length) {
+        const filename = `${folder}/${issue_number}.${lang}`;
+        await writeFile(
+          filename,
+          [generateShebang(lang)].concat(blocks).join("\n"),
+          { mode: "755" }
+        );
 
-    this.log("Written to %s", filename);
+        this.log("Written to %s", filename);
 
-    return filename;
+        filenames.push(filename);
+      }
+    }
+
+    return filenames;
   }
 }
 
@@ -50,7 +63,7 @@ function extract(issue: string) {
 function* extractCode(markdown: TxtNode): Generator<[string, string]> {
   for (const child of markdown.children ?? []) {
     if (child.type == ASTNodeTypes.CodeBlock) {
-      yield [child.lang, child.value];
+      yield [child.lang.toLowerCase(), child.value];
     }
 
     yield* extractCode(child);
