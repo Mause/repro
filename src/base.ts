@@ -24,7 +24,8 @@ export default abstract class extends Command {
     await mkdir(folder, { recursive: true });
 
     const filename = `${folder}/${issue_number}.py`;
-    await writeFile(filename, blocks.join("\n"));
+    await writeFile(filename, blocks.join("\n"), { mode: "755" });
+
 
     return filename;
   }
