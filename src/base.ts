@@ -45,7 +45,7 @@ export default abstract class extends Command {
     }
 
     if (filenames.length === 0) {
-      this.warn("No supported code blocks found, will not execute");
+      this.warn("No supported code blocks found");
     }
 
     return filenames;
