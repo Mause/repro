@@ -1,7 +1,7 @@
 @mause/repro
 =================
 
-oclif example Hello World CLI
+Simple tool to quickly run reproduction code from a GitHub issue
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@mause/repro.svg)](https://npmjs.org/package/@mause/repro)
