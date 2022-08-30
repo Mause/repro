@@ -26,12 +26,10 @@ export default class Run extends Shared {
 
     const filenames = await this.loadToDisk(issue);
 
-    if (filenames.length == 1) {
+    if (filenames.length === 1) {
       execFileSync(filenames[0]);
     } else if (filenames.length > 1) {
       this.warn('More than one file generated, will not execute');
-    } else {
-      this.warn('No supported code blocks found, will not execute');
     }
   }
 }
