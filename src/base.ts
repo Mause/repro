@@ -1,18 +1,26 @@
 import { Command } from "@oclif/core";
-import { Octokit } from "@octokit/rest";
+import { Octokit, RestEndpointMethodTypes } from "@octokit/rest";
 import { TxtNode, ASTNodeTypes } from "@textlint/ast-node-types";
 import { parse } from "@textlint/markdown-to-ast";
 import { mkdir, writeFile } from "fs/promises";
 import type { PromptModule } from "inquirer";
+import * as chalk from "chalk";
+
+const { supportsHyperlink } = require("supports-hyperlinks");
+const hyperlinker = require("hyperlinker");
 
 const issues = new Octokit().issues;
+
+export const line = (key: string, value: any) =>
+  console.log(`${chalk.blue(key)}: %s`, value);
 
 export default abstract class extends Command {
   protected async loadToDisk(issue: any) {
     let { owner, repo, issue_number } = await extract(issue);
     const query = { owner: owner!, repo: repo!, issue_number: issue_number! };
-    this.log(JSON.stringify(query));
     const details = await issues.get(query);
+
+    this.printInfo(query, details);
 
     const markdown = parse(details.data.body ?? "");
 
@@ -38,17 +46,32 @@ export default abstract class extends Command {
           { mode: "755" }
         );
 
-        this.log("Written to %s", filename);
+        line("Written to", filename);
 
         filenames.push(filename);
       }
     }
 
     if (filenames.length === 0) {
-      this.warn("No supported code blocks found, will not execute");
+      this.warn(chalk.red("No supported code blocks found"));
     }
 
     return filenames;
+  }
+
+  private printInfo(
+    query: { owner: string; repo: string; issue_number: number },
+    details: RestEndpointMethodTypes["issues"]["get"]["response"]
+  ) {
+    line("Repo", `${query.owner}/${query.repo}`);
+    let title = details.data.title;
+    if (supportsHyperlink()) {
+      title = hyperlinker(title, details.data.html_url);
+    }
+    line("Issue", title);
+    if (!supportsHyperlink()) {
+      line("Url", details.data.html_url);
+    }
   }
 }
 
