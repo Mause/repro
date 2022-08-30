@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0](https://github.com/Mause/repro/compare/v0.1.0...v0.2.0) (2022-08-30)
+
+
+### Features
+
+* add oclif help and update plugins ([837331a](https://github.com/Mause/repro/commit/837331ab61bbd97c41053095750838208c9f9359))
+* prettier interface ([182a704](https://github.com/Mause/repro/commit/182a704e283a365875db145dc5a24bf636713867))
+* prompt for issue if no number is given ([857537c](https://github.com/Mause/repro/commit/857537cf9d2c0d41674ae792ebfcd52ce8237ffb))
+
+
+### Bug Fixes
+
+* correct error message ([227d54f](https://github.com/Mause/repro/commit/227d54f3f5667957c2565a4bf13391120d28eb10))
+* generate correct shebang for node ([be5adef](https://github.com/Mause/repro/commit/be5adef361ce95966dacc0ba241240ee35b7e2e4))
+* ignore code blocks without a declared language ([54385ef](https://github.com/Mause/repro/commit/54385efde9f6ab883f55e1131fc435f33341eb50))
+
 ## [0.1.0](https://github.com/Mause/repro/compare/v0.0.2...v0.1.0) (2022-08-30)
 
 
