@@ -3,13 +3,16 @@ import { Octokit } from "@octokit/rest";
 import { TxtNode, ASTNodeTypes } from "@textlint/ast-node-types";
 import { parse } from "@textlint/markdown-to-ast";
 import { mkdir, writeFile } from "fs/promises";
+import type { PromptModule } from "inquirer";
+
+const issues = new Octokit().issues;
 
 export default abstract class extends Command {
   protected async loadToDisk(issue: any) {
-    let { owner, repo, issue_number } = extract(issue);
+    let { owner, repo, issue_number } = await extract(issue);
     const query = { owner: owner!, repo: repo!, issue_number: issue_number! };
     this.log(JSON.stringify(query));
-    const details = await new Octokit().issues.get(query);
+    const details = await issues.get(query);
 
     const markdown = parse(details.data.body ?? "");
 
@@ -42,15 +45,15 @@ export default abstract class extends Command {
     }
 
     if (filenames.length === 0) {
-      this.warn('No supported code blocks found, will not execute');
+      this.warn("No supported code blocks found, will not execute");
     }
 
     return filenames;
   }
 }
 
-function extract(issue: string) {
-  let owner, repo, issue_number, _;
+async function extract(issue: string) {
+  let owner: string, repo: string, issue_number, _;
   try {
     issue = new URL(issue).pathname.slice(1);
     [owner, repo, _, issue_number] = issue.split("/");
@@ -59,9 +62,35 @@ function extract(issue: string) {
   }
 
   if (!issue_number) {
+    issue_number = await promptForIssue(repo, owner);
   }
 
   return { owner, repo, issue_number: Number(issue_number) };
+}
+
+async function promptForIssue(repo: string, owner: string) {
+  const prompt = await getInquirer();
+  const repoIssues = (
+    await issues.listForRepo({
+      repo,
+      owner,
+    })
+  ).data;
+  return (
+    await prompt({
+      name: "Issue",
+      type: "list",
+      choices: repoIssues.map((issue) => ({
+        name: issue.title,
+        value: issue.number,
+      })),
+    })
+  ).Issue;
+}
+
+async function getInquirer() {
+  const inquirer = await Function('return import("inquirer")')();
+  return inquirer.default.prompt as PromptModule;
 }
 
 function* extractCode(markdown: TxtNode): Generator<[string, string]> {

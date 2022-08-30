@@ -19,11 +19,13 @@
   "dependencies": {
     "@oclif/core": "^1.16.0",
     "@octokit/rest": "^19.0.4",
-    "@textlint/markdown-to-ast": "^12.2.1"
+    "@textlint/markdown-to-ast": "^12.2.1",
+    "inquirer": "^9.1.0"
   },
   "devDependencies": {
     "@oclif/test": "^2",
     "@types/chai": "^4",
+    "@types/inquirer": "^9.0.1",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.9.4",
     "chai": "^4",
