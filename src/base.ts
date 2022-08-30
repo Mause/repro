@@ -26,6 +26,7 @@ export default abstract class extends Command {
     const filename = `${folder}/${issue_number}.py`;
     await writeFile(filename, blocks.join("\n"), { mode: "755" });
 
+    this.log("Written to %s", filename);
 
     return filename;
   }
