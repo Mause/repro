@@ -22,7 +22,7 @@
     "@oclif/plugin-warn-if-update-available": "^2.0.4",
     "@octokit/rest": "^19.0.4",
     "@textlint/markdown-to-ast": "^12.2.1",
-    "inquirer": "^9.1.0",
+    "inquirer": "^9.1.1",
     "prettier": "^2.7.1"
   },
   "devDependencies": {
