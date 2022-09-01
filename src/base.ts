@@ -17,7 +17,7 @@ export const line = (key: string, value: any) =>
   console.log(`${chalk.blue(key)}: %s`, value);
 
 export default abstract class extends Command {
-  protected async loadToDisk(issue: any): Promise<string> {
+  protected async loadToDisk(issue: any): Promise<string[]> {
     let { owner, repo, issue_number } = await extract(issue);
     const query = { owner: owner!, repo: repo!, issue_number: issue_number! };
     const details = await issues.get(query);
