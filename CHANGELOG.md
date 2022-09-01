@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/Mause/repro/compare/v0.2.0...v0.3.0) (2022-09-01)
+
+
+### Features
+
+* support more languages ([4a338f8](https://github.com/Mause/repro/commit/4a338f8869ba6c0ecb05d4379df160594c56ae18))
+
 ## [0.2.0](https://github.com/Mause/repro/compare/v0.1.0...v0.2.0) (2022-08-30)
 
 
