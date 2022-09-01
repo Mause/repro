@@ -5,6 +5,8 @@ import { parse } from "@textlint/markdown-to-ast";
 import { mkdir, writeFile } from "fs/promises";
 import type { PromptModule } from "inquirer";
 import * as chalk from "chalk";
+import { getLanguage } from "highlight.js";
+import * as _ from "lodash";
 
 const { supportsHyperlink } = require("supports-hyperlinks");
 const hyperlinker = require("hyperlinker");
@@ -15,7 +17,7 @@ export const line = (key: string, value: any) =>
   console.log(`${chalk.blue(key)}: %s`, value);
 
 export default abstract class extends Command {
-  protected async loadToDisk(issue: any) {
+  protected async loadToDisk(issue: any): Promise<string> {
     let { owner, repo, issue_number } = await extract(issue);
     const query = { owner: owner!, repo: repo!, issue_number: issue_number! };
     const details = await issues.get(query);
@@ -24,32 +26,26 @@ export default abstract class extends Command {
 
     const markdown = parse(details.data.body ?? "");
 
-    const root_blocks: Record<FileType, string[]> = { py: [], ts: [] };
-    for (const [lang, block] of extractCode(markdown)) {
-      if (["py", "python"].includes(lang)) {
-        root_blocks.py.push(block);
-      } else if (["js", "javascript", "typescript"].includes(lang)) {
-        root_blocks.ts.push(block);
-      }
-    }
+    const root_blocks = _.chain(Array.from(extractCode(markdown)))
+      .groupBy(([lang]) => getLanguage(lang)!.aliases![0]!)
+      .mapValues((blocks) => _.map(blocks, 1))
+      .value();
 
     const folder = `${owner}/${repo}`;
     await mkdir(folder, { recursive: true });
 
     const filenames = [];
     for (const [lang, blocks] of Object.entries(root_blocks)) {
-      if (blocks.length) {
-        const filename = `${folder}/${issue_number}.${lang}`;
-        await writeFile(
-          filename,
-          [generateShebang(lang as FileType)].concat(blocks).join("\n"),
-          { mode: "755" }
-        );
+      const filename = `${folder}/${issue_number}.${lang}`;
+      await writeFile(
+        filename,
+        [generateShebang(lang)].concat(blocks).join("\n"),
+        { mode: "755" }
+      );
 
-        line("Written to", filename);
+      line("Written to", filename);
 
-        filenames.push(filename);
-      }
+      filenames.push(filename);
     }
 
     if (filenames.length === 0) {
@@ -118,7 +114,7 @@ async function getInquirer() {
 
 function* extractCode(markdown: TxtNode): Generator<[string, string]> {
   for (const child of markdown.children ?? []) {
-    if (child.type == ASTNodeTypes.CodeBlock && child.lang) {
+    if (child.type === ASTNodeTypes.CodeBlock && child.lang) {
       yield [child.lang.toLowerCase(), child.value];
     }
 
@@ -126,8 +122,8 @@ function* extractCode(markdown: TxtNode): Generator<[string, string]> {
   }
 }
 
-type FileType = "ts" | "py";
-
-function generateShebang(blockType: FileType) {
-  return `#!/usr/bin/env ${blockType == "py" ? "python3" : "node"}`;
+function generateShebang(blockType: string) {
+  const executable =
+    { py: "python3", js: "node", ts: "ts-node" }[blockType] || blockType;
+  return `#!/usr/bin/env ${executable}`;
 }
