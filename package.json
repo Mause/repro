@@ -17,7 +17,7 @@
     "/oclif.manifest.json"
   ],
   "dependencies": {
-    "@oclif/core": "^1.16.0",
+    "@oclif/core": "^1.16.4",
     "@oclif/plugin-help": "^5.1.12",
     "@oclif/plugin-warn-if-update-available": "^2.0.4",
     "@octokit/rest": "^19.0.4",
