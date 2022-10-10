@@ -755,18 +755,19 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@textlint/ast-node-types@^12.2.1":
-  version "12.2.1"
-  resolved "https://registry.yarnpkg.com/@textlint/ast-node-types/-/ast-node-types-12.2.1.tgz#bec1e4b02e97ff1167d057c71feeee1a80015aef"
-  integrity sha512-NXYza6aG1+LdZ4g83gjRhDht+gdrTjJYkdcQhpvzNCtTar/sVpaykkauRcAKLhkIWrQpfb311pfMlU6qNDW76Q==
+"@textlint/ast-node-types@^12.2.2":
+  version "12.2.2"
+  resolved "https://registry.yarnpkg.com/@textlint/ast-node-types/-/ast-node-types-12.2.2.tgz#299c4035d26a2be8fe76bcb66798a8e82a5eb77c"
+  integrity sha512-VQAXUSGdmEajHXrMxeM9ZTS8UBJSVB0ghJFHpFfqYKlcDsjIqClSmTprY6521HoCoSLoUIGBxTC3jQyUMJFIWw==
 
-"@textlint/markdown-to-ast@^12.2.1":
-  version "12.2.1"
-  resolved "https://registry.yarnpkg.com/@textlint/markdown-to-ast/-/markdown-to-ast-12.2.1.tgz#e9ec19be71e4513d882986d14ab9a993dec74511"
-  integrity sha512-p+LlVcrgHnSNEWWflYU412uu+v4Cejs6hmI4SgZCheNg4u7Ik78aKgpe4jT5BhjLSBZ/KP6IrJxtCUOoJIUWmQ==
+"@textlint/markdown-to-ast@^12.2.2":
+  version "12.2.2"
+  resolved "https://registry.yarnpkg.com/@textlint/markdown-to-ast/-/markdown-to-ast-12.2.2.tgz#179fc46a9170c00af7b0654bb8dd48c6e7cea8d1"
+  integrity sha512-OP0cnGCzt8Bbfhn8fO/arQSHBhmuXB4maSXH8REJAtKRpTADWOrbuxAOaI9mjQ7EMTDiml02RZ9MaELQAWAsqQ==
   dependencies:
-    "@textlint/ast-node-types" "^12.2.1"
+    "@textlint/ast-node-types" "^12.2.2"
     debug "^4.3.4"
+    mdast-util-gfm-autolink-literal "^0.1.0"
     remark-footnotes "^3.0.0"
     remark-frontmatter "^3.0.0"
     remark-gfm "^1.0.0"
