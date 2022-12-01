@@ -38,7 +38,7 @@
     "eslint-config-oclif-typescript": "^1.0.3",
     "globby": "^13.0.0",
     "husky": ">=6",
-    "lint-staged": ">=10",
+    "lint-staged": ">=13",
     "mocha": "^10.0.0",
     "oclif": "^3",
     "shx": "^0.3.4",
