@@ -24,7 +24,7 @@
     "@textlint/markdown-to-ast": "^12.2.2",
     "inquirer": "^9.1.3",
     "cli-highlight": "^2.1.11",
-    "prettier": "^2.7.1"
+    "prettier": "^2.8.1"
   },
   "devDependencies": {
     "@oclif/test": "^2",
