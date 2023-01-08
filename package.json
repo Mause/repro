@@ -77,6 +77,6 @@
   ],
   "types": "dist/index.d.ts",
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.ts": ["eslint --cache --fix", "prettier --write"]
   }
 }
