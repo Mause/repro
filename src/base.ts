@@ -2,11 +2,11 @@ import { Command } from "@oclif/core";
 import { Octokit, RestEndpointMethodTypes } from "@octokit/rest";
 import { TxtNode, ASTNodeTypes } from "@textlint/ast-node-types";
 import { parse } from "@textlint/markdown-to-ast";
-import { mkdir, writeFile } from "fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import type { PromptModule } from "inquirer";
-import * as chalk from "chalk";
-import { getLanguage } from "highlight.js";
-import * as _ from "lodash";
+import chalk from "chalk";
+import hljs from "highlight.js";
+import _ from "lodash";
 
 const { supportsHyperlink } = require("supports-hyperlinks");
 const hyperlinker = require("hyperlinker");
@@ -18,35 +18,42 @@ export const line = (key: string, value: any) =>
 
 export default abstract class extends Command {
   protected async loadToDisk(issue: any): Promise<string[]> {
-    let { owner, repo, issue_number } = await extract(issue);
-    const query = { owner: owner!, repo: repo!, issue_number: issue_number! };
-    const details = await issues.get(query);
+    const query = await extract(issue);
+    const { owner, repo, issueNumber } = query;
+
+    const details = await issues.get({
+      owner,
+      repo,
+      // eslint-disable-next-line camelcase
+      issue_number: issueNumber,
+    });
 
     this.printInfo(query, details);
 
     const markdown = parse(details.data.body ?? "");
 
-    const root_blocks = _.chain(Array.from(extractCode(markdown)))
-      .groupBy(([lang]) => getLanguage(lang)!.aliases![0]!)
+    const rootBlocks = _.chain([...extractCode(markdown)])
+      .groupBy(([lang]) => hljs.getLanguage(lang)!.aliases![0]!)
       .mapValues((blocks) => _.map(blocks, 1))
       .value();
 
     const folder = `${owner}/${repo}`;
     await mkdir(folder, { recursive: true });
 
-    const filenames = [];
-    for (const [lang, blocks] of Object.entries(root_blocks)) {
-      const filename = `${folder}/${issue_number}.${lang}`;
-      await writeFile(
-        filename,
-        [generateShebang(lang)].concat(blocks).join("\n"),
-        { mode: "755" }
-      );
+    const filenames = await Promise.all(
+      Object.entries(rootBlocks).map(async ([lang, blocks]) => {
+        const filename = `${folder}/${issueNumber}.${lang}`;
+        await writeFile(
+          filename,
+          [generateShebang(lang), ...blocks].join("\n"),
+          { mode: "755" }
+        );
 
-      line("Written to", filename);
+        line("Written to", filename);
 
-      filenames.push(filename);
-    }
+        return filename;
+      })
+    );
 
     if (filenames.length === 0) {
       this.warn(chalk.red("No supported code blocks found"));
@@ -56,7 +63,7 @@ export default abstract class extends Command {
   }
 
   private printInfo(
-    query: { owner: string; repo: string; issue_number: number },
+    query: { owner: string; repo: string; issueNumber: number },
     details: RestEndpointMethodTypes["issues"]["get"]["response"]
   ) {
     line("Repo", `${query.owner}/${query.repo}`);
@@ -64,6 +71,7 @@ export default abstract class extends Command {
     if (supportsHyperlink()) {
       title = hyperlinker(title, details.data.html_url);
     }
+
     line("Issue", title);
     if (!supportsHyperlink()) {
       line("Url", details.data.html_url);
@@ -71,44 +79,47 @@ export default abstract class extends Command {
   }
 }
 
-async function extract(issue: string) {
-  let owner: string, repo: string, issue_number, _;
+async function extract(
+  issue: string
+): Promise<{ owner: string; repo: string; issueNumber: number }> {
   try {
     issue = new URL(issue).pathname.slice(1);
-    [owner, repo, _, issue_number] = issue.split("/");
-  } catch (e) {
-    [owner, repo, issue_number] = issue.split("/");
+  } catch {}
+
+  const parts = issue.split("/");
+
+  const [owner, repo] = parts;
+  let issueNumber = _.last(parts);
+
+  if (!issueNumber) {
+    issueNumber = await promptForIssue(repo, owner);
   }
 
-  if (!issue_number) {
-    issue_number = await promptForIssue(repo, owner);
-  }
-
-  return { owner, repo, issue_number: Number(issue_number) };
+  return { owner, repo, issueNumber: Number(issueNumber) };
 }
 
 async function promptForIssue(repo: string, owner: string) {
   const prompt = await getInquirer();
-  const repoIssues = (
-    await issues.listForRepo({
-      repo,
-      owner,
-    })
-  ).data;
-  return (
-    await prompt({
-      name: "Issue",
-      type: "list",
-      choices: repoIssues.map((issue) => ({
-        name: issue.title,
-        value: issue.number,
-      })),
-    })
-  ).Issue;
+  const repoIssues = await issues.listForRepo({
+    repo,
+    owner,
+  });
+
+  const response = await prompt({
+    name: "Issue",
+    type: "list",
+    choices: repoIssues.data.map((issue) => ({
+      name: issue.title,
+      value: issue.number,
+    })),
+  });
+
+  return response.Issue;
 }
 
 async function getInquirer() {
-  const inquirer = await Function('return import("inquirer")')();
+  // eslint-disable-next-line no-new-func
+  const inquirer = await new Function('return import("inquirer")')();
   return inquirer.default.prompt as PromptModule;
 }
 
