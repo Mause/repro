@@ -21,10 +21,16 @@
     "@oclif/plugin-help": "^5.1.15",
     "@oclif/plugin-warn-if-update-available": "^2.0.6",
     "@octokit/rest": "^19.0.4",
+    "@textlint/ast-node-types": "^12.3.0",
     "@textlint/markdown-to-ast": "^12.2.2",
-    "inquirer": "^9.1.3",
+    "chalk": "^5.2.0",
     "cli-highlight": "^2.1.11",
-    "prettier": "^2.7.1"
+    "highlight.js": "^11.7.0",
+    "hyperlinker": "^1.0.0",
+    "inquirer": "^9.1.3",
+    "lodash": "^4.17.21",
+    "prettier": "^2.7.1",
+    "supports-hyperlinks": "^2.3.0"
   },
   "devDependencies": {
     "@oclif/test": "^2",
@@ -32,10 +38,14 @@
     "@types/inquirer": "^9.0.2",
     "@types/mocha": "^9.1.1",
     "@types/node": "^16.11.56",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
     "chai": "^4",
     "eslint": "^8.25.0",
     "eslint-config-oclif": "^4",
     "eslint-config-oclif-typescript": "^1.0.3",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-unicorn": "^45.0.2",
     "globby": "^13.0.0",
     "husky": ">=6",
     "lint-staged": ">=10",
@@ -74,6 +84,9 @@
   ],
   "types": "dist/index.d.ts",
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   }
 }

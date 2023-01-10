@@ -3,9 +3,7 @@ import Shared from "../base";
 export default class Load extends Shared {
   static description = "Load code blocks from an issue into a file";
 
-  static examples = [
-    `$ repro load owner/repo/issue_id`,
-  ];
+  static examples = ["$ repro load owner/repo/issue_id"];
 
   static flags = {};
 
@@ -21,7 +19,7 @@ export default class Load extends Shared {
   async run(): Promise<void> {
     const { args } = await this.parse(Load);
 
-    let { issue } = args;
+    const { issue } = args;
 
     await this.loadToDisk(issue);
   }
