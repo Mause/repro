@@ -125,8 +125,8 @@ async function getInquirer() {
 
 function* extractCode(markdown: TxtNode): Generator<[string, string]> {
   for (const child of markdown.children ?? []) {
-    if (child.type === ASTNodeTypes.CodeBlock && child.lang) {
-      yield [child.lang.toLowerCase(), child.value];
+    if (child.type === ASTNodeTypes.CodeBlock) {
+      yield [child.lang?.toLowerCase() || "txt", child.value];
     }
 
     yield* extractCode(child);

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/Mause/repro/compare/v0.3.0...v0.4.0) (2023-01-10)
+
+
+### Features
+
+* support text code blocks ([cd299ff](https://github.com/Mause/repro/commit/cd299ff2213baf1651384414fe001b79316abfd9))
+
 ## [0.3.0](https://github.com/Mause/repro/compare/v0.2.0...v0.3.0) (2022-09-01)
 
 
