@@ -469,7 +469,7 @@
     supports-color "^8.1.1"
     tslib "^2"
 
-"@oclif/core@^1.16.4", "@oclif/core@^1.20.4", "@oclif/core@^1.23.1", "@oclif/core@^1.23.2":
+"@oclif/core@^1.20.4", "@oclif/core@^1.23.1", "@oclif/core@^1.23.2":
   version "1.23.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.23.2.tgz#6779f412d787ddc885b507cb00927dae71b641da"
   integrity sha512-NdaOaUDTRc6g1yTkOAKiEVOiQhc5CNcWNXa0QF4IS4yTjNqp4DOzgtF9Dwe585nPEKzSbTBiz1wyLOa4qIHSRQ==
@@ -544,12 +544,12 @@
   integrity sha512-IMsTN1dXEXaOSre27j/ywGbBjrzx0FNd1XmuhCWCB9NTPrhWI1Ifbz+YLSEcstfQfocYsrbrIessxXb2oon4lA==
 
 "@oclif/test@^2":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@oclif/test/-/test-2.2.1.tgz#1694b0b236bff1183d0e44af063e77bf6bc60f03"
-  integrity sha512-j3PdoeK86DFCmilvUZSQFdHa0o1eejlR70c9O5UqqPLGSY3Pz/11TaXB5BrfhqISIpZTUIacDlAd1Xvybft0sg==
+  version "2.2.20"
+  resolved "https://registry.yarnpkg.com/@oclif/test/-/test-2.2.20.tgz#c5c76f9ab3eeb6df3c1af81a95428c95fb0065e9"
+  integrity sha512-SaSMgeB9DKcfRRIvh461eK1eEkjgV/iYHWU5XhWli8psAnqKFgxar3ESpMfQKwYjVMxKdKSjOhEFHaHMOgPJOQ==
   dependencies:
-    "@oclif/core" "^1.16.4"
-    fancy-test "^2.0.2"
+    "@oclif/core" "^1.23.1"
+    fancy-test "^2.0.11"
 
 "@octokit/auth-token@^2.4.4":
   version "2.5.0"
@@ -2566,10 +2566,10 @@ external-editor@^3.0.3:
     iconv-lite "^0.4.24"
     tmp "^0.0.33"
 
-fancy-test@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-2.0.3.tgz#2219e9ec3d4addf2a30f5a7496b3700872576101"
-  integrity sha512-vjb7ceV3XXw1PxND3SsEJUa7Snx5xa7nBNI2pvT8O0OPgnCROy+NJvgQwKztflGPK6aCvZi3dC2RY1N8UEREOg==
+fancy-test@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-2.0.11.tgz#27eb9fd5076114c609bd5ee6f5b9c8bd8ec67689"
+  integrity sha512-R98gMuHy/tsGUmChkehXvq4PmzdhUKl1SDyYkrvh4Vhc+8fjUUQWu2pts4Y4BStjkltPtQtccNYN63sjs/a3Xw==
   dependencies:
     "@types/chai" "*"
     "@types/lodash" "*"
