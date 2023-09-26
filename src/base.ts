@@ -75,14 +75,17 @@ export default abstract class extends Command {
     details: RestEndpointMethodTypes["issues"]["get"]["response"]
   ) {
     line("Repo", `${query.owner}/${query.repo}`);
-    let title = details.data.title;
-    if (supportsHyperlink()) {
-      title = hyperlinker(title, details.data.html_url);
+    let { title } = details.data;
+    // eslint-disable-next-line camelcase
+    const { html_url } = details.data;
+    const links = supportsHyperlink(process.stdout);
+    if (links) {
+      title = hyperlinker(title, html_url);
     }
 
     line("Issue", title);
-    if (!supportsHyperlink()) {
-      line("Url", details.data.html_url);
+    if (!links) {
+      line("Url", html_url);
     }
   }
 }
