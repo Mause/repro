@@ -22,7 +22,7 @@
     "@oclif/plugin-warn-if-update-available": "^2.1.0",
     "@octokit/rest": "^19.0.5",
     "@textlint/ast-node-types": "^12.3.0",
-    "@textlint/markdown-to-ast": "^12.2.2",
+    "@textlint/markdown-to-ast": "^13.0.0",
     "chalk": "^5.2.0",
     "cli-highlight": "^2.1.11",
     "highlight.js": "^11.7.0",
