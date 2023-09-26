@@ -16,11 +16,11 @@ const chalk = new Function('return import("chalk")')().then(
   (chalk: any) => chalk.default as ChalkInstance
 );
 
-const issues = new Octokit().issues;
+const { issues } = new Octokit();
 
 export const line = async (key: string, value: any) => {
-  const newLocal = await chalk;
-  return console.log(`${newLocal.blue(key)}: %s`, value);
+  const chalkInstance = await chalk;
+  return console.log(`${chalkInstance.blue(key)}: %s`, value);
 };
 
 export default abstract class extends Command {
