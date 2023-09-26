@@ -1,4 +1,4 @@
-import Shared from "../base";
+import Shared, { sharedArgs } from "../base";
 import { execFileSync } from "node:child_process";
 
 export default class Run extends Shared {
@@ -9,14 +9,7 @@ export default class Run extends Shared {
 
   static flags = {};
 
-  static args = [
-    {
-      name: "issue",
-      description:
-        "Issue to load and run - either a URL or owner/name/issue_id triplet",
-      required: true,
-    },
-  ];
+  static args = sharedArgs("Issue to load and run");
 
   async run(): Promise<void> {
     const { args } = await this.parse(Run);

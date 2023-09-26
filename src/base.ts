@@ -1,4 +1,4 @@
-import { Command } from "@oclif/core";
+import { Args, Command } from "@oclif/core";
 import { Octokit, RestEndpointMethodTypes } from "@octokit/rest";
 import { TxtNode, ASTNodeTypes } from "@textlint/ast-node-types";
 import { parse } from "@textlint/markdown-to-ast";
@@ -22,6 +22,14 @@ export const line = async (key: string, value: any) => {
   const chalkInstance = await chalk;
   return console.log(`${chalkInstance.blue(key)}: %s`, value);
 };
+
+export const sharedArgs = (description: string) => ({
+  issue: Args.string({
+    name: "issue",
+    description: `${description} - either a URL or owner/name/issue_id triplet`,
+    required: true,
+  }),
+});
 
 export default abstract class extends Command {
   protected async loadToDisk(issue: any): Promise<string[]> {

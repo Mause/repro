@@ -1,4 +1,4 @@
-import Shared from "../base";
+import Shared, { sharedArgs } from "../base";
 
 export default class Load extends Shared {
   static description = "Load code blocks from an issue into a file";
@@ -7,14 +7,7 @@ export default class Load extends Shared {
 
   static flags = {};
 
-  static args = [
-    {
-      name: "issue",
-      description:
-        "Issue to load - either a URL or owner/name/issue_id triplet",
-      required: true,
-    },
-  ];
+  static args = sharedArgs("Issue to load");
 
   async run(): Promise<void> {
     const { args } = await this.parse(Load);
