@@ -878,12 +878,7 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@textlint/ast-node-types@^12.3.0":
-  version "12.3.0"
-  resolved "https://registry.yarnpkg.com/@textlint/ast-node-types/-/ast-node-types-12.3.0.tgz#3eb52ca2d7234ad8e015a1fc104ab15945a25e1f"
-  integrity sha512-ke5hlKy/xZ/vQt6j+h4k9GradJPDsV3FKsUqWpCpF/X8qWCU2zM4e1SMUAFjoUcLuF9in+eXIQ71Qm/AdjjkZQ==
-
-"@textlint/ast-node-types@^13.3.3":
+"@textlint/ast-node-types@^13.0.0", "@textlint/ast-node-types@^13.3.3":
   version "13.3.3"
   resolved "https://registry.yarnpkg.com/@textlint/ast-node-types/-/ast-node-types-13.3.3.tgz#1aa84cb97ebe0d1a85d785a58122af12b16bcbb3"
   integrity sha512-KCpJppfX3Km69twa6SmVEJ8mkyAZSrxw3XaaLQSlpc7PWnLUJSCHGPVECI1nSUDhiTd1r6zlRvWuyIAZJiov+A==
