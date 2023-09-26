@@ -28,5 +28,5 @@ jobs:
     - run: yarn --freeze
     - run: yarn build
     - run: yarn pack
-    - run: yarn run lint
+    - run: yarn lint
     #- run: yarn test
