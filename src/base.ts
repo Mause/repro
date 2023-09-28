@@ -153,6 +153,10 @@ function* extractCode(markdown: TxtNode): Generator<[string, string]> {
 }
 
 function generateShebang(blockType: string) {
+  if (blockType === "java") {
+    return `///usr/bin/env jbang "$0" "$@" ; exit $?`;
+  }
+
   const executable =
     { py: "python3", js: "node", ts: "ts-node" }[blockType] || blockType;
   return `#!/usr/bin/env ${executable}`;
