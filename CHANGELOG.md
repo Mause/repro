@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.5.0](https://github.com/Mause/repro/compare/v0.4.1...v0.5.0) (2023-09-29)
+
+
+### Features
+
+* add java support via jbang ([38e5c4c](https://github.com/Mause/repro/commit/38e5c4cd0f46523bf1cae0818ee5545a8a14207e))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @oclif/core to v2 ([1e2a7fc](https://github.com/Mause/repro/commit/1e2a7fc0d56f34950382f338a443cfc98c592f26))
+* **deps:** update dependency @textlint/ast-node-types to v13 ([b42476c](https://github.com/Mause/repro/commit/b42476c2ce3e7300634b1d093b97cbb05f39dae7))
+* **deps:** update dependency @textlint/markdown-to-ast to v13 ([5e064b6](https://github.com/Mause/repro/commit/5e064b6bcf57df0b43c37d5e9408216eefc9b745))
+* update types for new @oclif/core version ([e89b035](https://github.com/Mause/repro/commit/e89b03549e2b26bf3a3901945889c357117d69e2))
+
 ## [0.4.1](https://github.com/Mause/repro/compare/v0.4.0...v0.4.1) (2023-09-26)
 
 
