@@ -1,20 +1,35 @@
-import { Command } from "@oclif/core";
+import { Args, Command } from "@oclif/core";
 import { Octokit, RestEndpointMethodTypes } from "@octokit/rest";
 import { TxtNode, ASTNodeTypes } from "@textlint/ast-node-types";
 import { parse } from "@textlint/markdown-to-ast";
 import { mkdir, writeFile } from "node:fs/promises";
 import type { PromptModule } from "inquirer";
-import chalk from "chalk";
 import hljs from "highlight.js";
 import _ from "lodash";
+import { supportsHyperlink } from "supports-hyperlinks";
+import hyperlinker from "hyperlinker";
+// eslint-disable-next-line unicorn/import-style
+import type { ChalkInstance } from "chalk";
 
-const { supportsHyperlink } = require("supports-hyperlinks");
-const hyperlinker = require("hyperlinker");
+// eslint-disable-next-line no-new-func, unicorn/prefer-top-level-await
+const chalk = new Function('return import("chalk")')().then(
+  (chalk: any) => chalk.default as ChalkInstance
+);
 
-const issues = new Octokit().issues;
+const { issues } = new Octokit();
 
-export const line = (key: string, value: any) =>
-  console.log(`${chalk.blue(key)}: %s`, value);
+export const line = async (key: string, value: any) => {
+  const chalkInstance = await chalk;
+  return console.log(`${chalkInstance.blue(key)}: %s`, value);
+};
+
+export const sharedArgs = (description: string) => ({
+  issue: Args.string({
+    name: "issue",
+    description: `${description} - either a URL or owner/name/issue_id triplet`,
+    required: true,
+  }),
+});
 
 export default abstract class extends Command {
   protected async loadToDisk(issue: any): Promise<string[]> {
@@ -56,7 +71,8 @@ export default abstract class extends Command {
     );
 
     if (filenames.length === 0) {
-      this.warn(chalk.red("No supported code blocks found"));
+      const chalkInstance = await chalk;
+      this.warn(chalkInstance.red("No supported code blocks found"));
     }
 
     return filenames;
@@ -67,14 +83,17 @@ export default abstract class extends Command {
     details: RestEndpointMethodTypes["issues"]["get"]["response"]
   ) {
     line("Repo", `${query.owner}/${query.repo}`);
-    let title = details.data.title;
-    if (supportsHyperlink()) {
-      title = hyperlinker(title, details.data.html_url);
+    let { title } = details.data;
+    // eslint-disable-next-line camelcase
+    const { html_url } = details.data;
+    const links = supportsHyperlink(process.stdout);
+    if (links) {
+      title = hyperlinker(title, html_url);
     }
 
     line("Issue", title);
-    if (!supportsHyperlink()) {
-      line("Url", details.data.html_url);
+    if (!links) {
+      line("Url", html_url);
     }
   }
 }
@@ -134,6 +153,10 @@ function* extractCode(markdown: TxtNode): Generator<[string, string]> {
 }
 
 function generateShebang(blockType: string) {
+  if (blockType === "java") {
+    return `///usr/bin/env jbang "$0" "$@" ; exit $?`;
+  }
+
   const executable =
     { py: "python3", js: "node", ts: "ts-node" }[blockType] || blockType;
   return `#!/usr/bin/env ${executable}`;

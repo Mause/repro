@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1](https://github.com/Mause/repro/compare/v0.4.0...v0.4.1) (2023-09-26)
+
+
+### Bug Fixes
+
+* chalk import ([3bc6482](https://github.com/Mause/repro/commit/3bc6482312475c538ab16675aabe14d8e80a08e8))
+* **deps:** update dependency supports-hyperlinks to v3 ([036e88d](https://github.com/Mause/repro/commit/036e88d6aecebecf58cdd4ce565b52caad7630a8))
+
 ## [0.4.0](https://github.com/Mause/repro/compare/v0.3.0...v0.4.0) (2023-01-10)
 
 
