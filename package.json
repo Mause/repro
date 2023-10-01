@@ -25,7 +25,7 @@
     "@textlint/markdown-to-ast": "^13.0.0",
     "chalk": "^5.2.0",
     "cli-highlight": "^2.1.11",
-    "highlight.js": "^11.7.0",
+    "highlight.js": "^11.8.0",
     "hyperlinker": "^1.0.0",
     "inquirer": "^9.2.11",
     "lodash": "^4.17.21",
