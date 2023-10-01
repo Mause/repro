@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.1](https://github.com/Mause/repro/compare/v0.5.0...v0.5.1) (2023-10-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @octokit/rest to v20 ([a1dd944](https://github.com/Mause/repro/commit/a1dd94480ad2a035622a9e329846ecd9ed983a76))
+* **deps:** update dependency prettier to v3 ([fba13b0](https://github.com/Mause/repro/commit/fba13b085c273d5aa8066370f4db005297803e09))
+
 ## [0.5.0](https://github.com/Mause/repro/compare/v0.4.1...v0.5.0) (2023-09-29)
 
 
