@@ -13,7 +13,7 @@ import type { ChalkInstance } from "chalk";
 
 // eslint-disable-next-line no-new-func, unicorn/prefer-top-level-await
 const chalk = new Function('return import("chalk")')().then(
-  (chalk: any) => chalk.default as ChalkInstance
+  (chalk: any) => chalk.default as ChalkInstance,
 );
 
 const { issues } = new Octokit();
@@ -61,13 +61,13 @@ export default abstract class extends Command {
         await writeFile(
           filename,
           [generateShebang(lang), ...blocks].join("\n"),
-          { mode: "755" }
+          { mode: "755" },
         );
 
         line("Written to", filename);
 
         return filename;
-      })
+      }),
     );
 
     if (filenames.length === 0) {
@@ -80,7 +80,7 @@ export default abstract class extends Command {
 
   private printInfo(
     query: { owner: string; repo: string; issueNumber: number },
-    details: RestEndpointMethodTypes["issues"]["get"]["response"]
+    details: RestEndpointMethodTypes["issues"]["get"]["response"],
   ) {
     line("Repo", `${query.owner}/${query.repo}`);
     let { title } = details.data;
@@ -99,7 +99,7 @@ export default abstract class extends Command {
 }
 
 async function extract(
-  issue: string
+  issue: string,
 ): Promise<{ owner: string; repo: string; issueNumber: number }> {
   try {
     issue = new URL(issue).pathname.slice(1);
@@ -108,7 +108,7 @@ async function extract(
   const parts = issue.split("/");
 
   const [owner, repo] = parts;
-  let issueNumber = _.last(parts);
+  let issueNumber = parts.at(-1);
 
   if (!issueNumber) {
     issueNumber = await promptForIssue(repo, owner);
