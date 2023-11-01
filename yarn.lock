@@ -389,7 +389,7 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^3.0.0-beta.17", "@oclif/core@^3.0.4", "@oclif/core@^3.3.1", "@oclif/core@^3.9.1", "@oclif/core@^3.9.2":
+"@oclif/core@^3.0.4", "@oclif/core@^3.3.1", "@oclif/core@^3.9.1", "@oclif/core@^3.9.2":
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.9.2.tgz#6bc0e67398913ec369ebaae6eb948b574d4d2a26"
   integrity sha512-fDygnFqh2KXn/IDquhypZSP7Q2V071WgRswq8cgli5uw6RzS4Uyj/7EkijboiAo7H+bRFxN0PdgGQHGyAoc+XQ==
@@ -454,12 +454,12 @@
     http-call "^5.2.2"
     lodash.template "^4.5.0"
 
-"@oclif/test@^3.0.0":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@oclif/test/-/test-3.0.1.tgz#81d7645222211640afae7512d8243d5a9c52e2c1"
-  integrity sha512-1oJNdnwpp1x4WhUcstgwNgbijNOdz7l5LdWiTU0ZMwkyvxcQhZKCF5puFXndV+EkYds/s/0+dZOx0rhhDILA/w==
+"@oclif/test@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@oclif/test/-/test-3.0.4.tgz#7a332aba9a3098a203242cb68f024abd6bc11235"
+  integrity sha512-McllwV5r2X5/oP6uqvoO7F5g5LtoqfdgjqvrG+NL/HRN0Ux5RwFHD0tiN4s87C/VhBUSNbK0kyAdosBScmHEMg==
   dependencies:
-    "@oclif/core" "^3.0.0-beta.17"
+    "@oclif/core" "^3.9.1"
     chai "^4.3.10"
     fancy-test "^3.0.1"
 
