@@ -12,3 +12,5 @@ repos:
                 - "eslint-config-prettier@^9.0.0"
                 - "eslint-plugin-unicorn@^48.0.0"
                 - "eslint-plugin-node@^11.1.0"
+                - "@typescript-eslint/eslint-plugin@^6.0.0"
+                - "@typescript-eslint/parser@^6.0.0"
