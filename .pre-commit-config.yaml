@@ -1,12 +1,13 @@
--   repo: https://github.com/pre-commit/mirrors-eslint
-    rev: 'v8.52.0'
-    hooks:
-    -   id: eslint
-        files: \.[jt]sx?$  # *.js, *.jsx, *.ts and *.tsx
-        types: [file]
-        additional_dependencies:
-            - "eslint@^8.50.0"
-            - "eslint-config-oclif@^5.0.0"
-            - "eslint-config-oclif-typescript@^2.0.0"
-            - "eslint-config-prettier@^9.0.0"
-            - "eslint-plugin-unicorn@^48.0.0"
+repos:
+    -   repo: https://github.com/pre-commit/mirrors-eslint
+        rev: 'v8.52.0'
+        hooks:
+        -   id: eslint
+            files: \.[jt]sx?$  # *.js, *.jsx, *.ts and *.tsx
+            types: [file]
+            additional_dependencies:
+                - "eslint@^8.50.0"
+                - "eslint-config-oclif@^5.0.0"
+                - "eslint-config-oclif-typescript@^2.0.0"
+                - "eslint-config-prettier@^9.0.0"
+                - "eslint-plugin-unicorn@^48.0.0"
