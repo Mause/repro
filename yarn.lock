@@ -389,7 +389,7 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^3.0.0-beta.17", "@oclif/core@^3.0.1", "@oclif/core@^3.9.2":
+"@oclif/core@^3.0.0-beta.17", "@oclif/core@^3.0.1", "@oclif/core@^3.9.1", "@oclif/core@^3.9.2":
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.9.2.tgz#6bc0e67398913ec369ebaae6eb948b574d4d2a26"
   integrity sha512-fDygnFqh2KXn/IDquhypZSP7Q2V071WgRswq8cgli5uw6RzS4Uyj/7EkijboiAo7H+bRFxN0PdgGQHGyAoc+XQ==
@@ -420,12 +420,19 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/plugin-help@^5.2.14", "@oclif/plugin-help@^5.2.20":
+"@oclif/plugin-help@^5.2.14":
   version "5.2.20"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-5.2.20.tgz#4035a0ac231f95fb8e334da342175e3ca00f6abc"
   integrity sha512-u+GXX/KAGL9S10LxAwNUaWdzbEBARJ92ogmM7g3gDVud2HioCmvWQCDohNRVZ9GYV9oKwZ/M8xwd6a1d95rEKQ==
   dependencies:
     "@oclif/core" "^2.15.0"
+
+"@oclif/plugin-help@^6.0.0":
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-6.0.5.tgz#4457212909c60bf67939b8c88773696f448f910a"
+  integrity sha512-PnwmnpNGE3y7zZBKMH7Le+iFKuvKViO1lboJbz8BEhM+XXvTDkIJ1TYFlETMHzK+KSB2JyFCJmqn2AnAKSyTKA==
+  dependencies:
+    "@oclif/core" "^3.9.1"
 
 "@oclif/plugin-not-found@^2.3.32":
   version "2.4.1"
