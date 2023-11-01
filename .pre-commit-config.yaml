@@ -1,0 +1,8 @@
+-   repo: https://github.com/pre-commit/mirrors-eslint
+    rev: 'v8.52.0'
+    hooks:
+    -   id: eslint
+        files: \.[jt]sx?$  # *.js, *.jsx, *.ts and *.tsx
+        types: [file]
+        additional_dependencies:
+         - 'eslint-config-oclif-typescript@^3.0.0'
