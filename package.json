@@ -19,7 +19,7 @@
   "dependencies": {
     "@oclif/core": "^3.9.2",
     "@oclif/plugin-help": "^6.0.0",
-    "@oclif/plugin-warn-if-update-available": "^2.1.1",
+    "@oclif/plugin-warn-if-update-available": "^3.0.0",
     "@octokit/rest": "^20.0.0",
     "@textlint/ast-node-types": "^13.0.0",
     "@textlint/markdown-to-ast": "^13.0.0",

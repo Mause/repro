@@ -389,7 +389,7 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^3.0.0-beta.17", "@oclif/core@^3.0.1", "@oclif/core@^3.9.1", "@oclif/core@^3.9.2":
+"@oclif/core@^3.0.0-beta.17", "@oclif/core@^3.0.1", "@oclif/core@^3.3.1", "@oclif/core@^3.9.1", "@oclif/core@^3.9.2":
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.9.2.tgz#6bc0e67398913ec369ebaae6eb948b574d4d2a26"
   integrity sha512-fDygnFqh2KXn/IDquhypZSP7Q2V071WgRswq8cgli5uw6RzS4Uyj/7EkijboiAo7H+bRFxN0PdgGQHGyAoc+XQ==
@@ -443,7 +443,7 @@
     chalk "^4"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-warn-if-update-available@^2.0.44", "@oclif/plugin-warn-if-update-available@^2.1.1":
+"@oclif/plugin-warn-if-update-available@^2.0.44":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.1.1.tgz#e645d3d735241422d3f75e8fbf5c68db575f4c23"
   integrity sha512-y7eSzT6R5bmTIJbiMMXgOlbBpcWXGlVhNeQJBLBCCy1+90Wbjyqf6uvY0i2WcO4sh/THTJ20qCW80j3XUlgDTA==
@@ -454,6 +454,17 @@
     http-call "^5.2.2"
     lodash.template "^4.5.0"
     semver "^7.5.4"
+
+"@oclif/plugin-warn-if-update-available@^3.0.0":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.0.2.tgz#76d02069c0d5545b5000660460edb6085272cbcd"
+  integrity sha512-dUXfRNFtnezS4uqQ+Ap4qb6UP0DWExTvoqghNvvGTIN4PEgfYHogvBORn+rFnDXXE8kgZFuqP4ZQJRP9NyLhOA==
+  dependencies:
+    "@oclif/core" "^3.3.1"
+    chalk "^5.3.0"
+    debug "^4.1.0"
+    http-call "^5.2.2"
+    lodash.template "^4.5.0"
 
 "@oclif/test@^3.0.0":
   version "3.0.1"
