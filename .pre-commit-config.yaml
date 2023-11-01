@@ -5,4 +5,8 @@
         files: \.[jt]sx?$  # *.js, *.jsx, *.ts and *.tsx
         types: [file]
         additional_dependencies:
-         - 'eslint-config-oclif-typescript@^3.0.0'
+            - "eslint@^8.50.0"
+            - "eslint-config-oclif@^5.0.0"
+            - "eslint-config-oclif-typescript@^2.0.0"
+            - "eslint-config-prettier@^9.0.0"
+            - "eslint-plugin-unicorn@^48.0.0"
