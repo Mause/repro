@@ -16,3 +16,4 @@ repos:
                 - "@typescript-eslint/parser@^6.0.0"
                 - eslint-plugin-import@latest
                 - eslint-plugin-mocha@latest
+                - typescript@5
