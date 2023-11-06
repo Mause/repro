@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.5.2](https://github.com/Mause/repro/compare/v0.5.1...v0.5.2) (2023-11-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @oclif/core to v3 ([9f7ab50](https://github.com/Mause/repro/commit/9f7ab5040db328e7afa826c340a85e73b2a68a39))
+* **deps:** update dependency @oclif/plugin-help to v6 ([5910c12](https://github.com/Mause/repro/commit/5910c12867ecf5394db8b3d2f08583ce28da1947))
+* **deps:** update dependency @oclif/plugin-warn-if-update-available to v3 ([a6b9764](https://github.com/Mause/repro/commit/a6b9764f6c08839c6f36b9a2cde8c9d35ebe4f89))
+
 ## [0.5.1](https://github.com/Mause/repro/compare/v0.5.0...v0.5.1) (2023-10-01)
 
 
