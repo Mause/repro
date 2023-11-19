@@ -3,9 +3,7 @@
   "version": "0.5.2",
   "description": "Simple tool to quickly run reproduction code from a GitHub issue",
   "author": "Elliana May @Mause",
-  "bin": {
-    "repro": "./bin/run"
-  },
+  "bin": "./bin/run",
   "homepage": "https://github.com/Mause/repro",
   "license": "MIT",
   "main": "dist/index.js",
@@ -88,5 +86,6 @@
       "eslint --cache --fix",
       "prettier --write"
     ]
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
