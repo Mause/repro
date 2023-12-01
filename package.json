@@ -19,7 +19,7 @@
     "@oclif/plugin-help": "^6.0.0",
     "@oclif/plugin-warn-if-update-available": "^3.0.0",
     "@octokit/rest": "^20.0.0",
-    "@textlint/ast-node-types": "^13.0.0",
+    "@textlint/ast-node-types": "^13.4.1",
     "@textlint/markdown-to-ast": "^13.4.1",
     "chalk": "^5.2.0",
     "cli-highlight": "^2.1.11",

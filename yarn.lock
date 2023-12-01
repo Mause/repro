@@ -190,7 +190,7 @@ __metadata:
     "@oclif/plugin-warn-if-update-available": "npm:^3.0.0"
     "@oclif/test": "npm:^3.0.4"
     "@octokit/rest": "npm:^20.0.0"
-    "@textlint/ast-node-types": "npm:^13.0.0"
+    "@textlint/ast-node-types": "npm:^13.4.1"
     "@textlint/markdown-to-ast": "npm:^13.4.1"
     "@types/chai": "npm:^4"
     "@types/inquirer": "npm:^9.0.6"
@@ -1017,13 +1017,6 @@ __metadata:
   dependencies:
     defer-to-connect: "npm:^2.0.0"
   checksum: 73946918c025339db68b09abd91fa3001e87fc749c619d2e9c2003a663039d4c3cb89836c98a96598b3d47dec2481284ba85355392644911f5ecd2336536697f
-  languageName: node
-  linkType: hard
-
-"@textlint/ast-node-types@npm:^13.0.0":
-  version: 13.3.3
-  resolution: "@textlint/ast-node-types@npm:13.3.3"
-  checksum: 88ddee67533f9be705dd035922d3820bf14cdb3f44a5592ec5fe93b79e1b223f2e9faadefab14da6544b115702a8bc45d5f2457cb9f00d63b6f8559f8eeb3e5a
   languageName: node
   linkType: hard
 
