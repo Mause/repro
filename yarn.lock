@@ -191,7 +191,7 @@ __metadata:
     "@oclif/test": "npm:^3.0.4"
     "@octokit/rest": "npm:^20.0.0"
     "@textlint/ast-node-types": "npm:^13.0.0"
-    "@textlint/markdown-to-ast": "npm:^13.0.0"
+    "@textlint/markdown-to-ast": "npm:^13.4.1"
     "@types/chai": "npm:^4"
     "@types/inquirer": "npm:^9.0.6"
     "@types/mocha": "npm:^10.0.3"
@@ -1020,18 +1020,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@textlint/ast-node-types@npm:^13.0.0, @textlint/ast-node-types@npm:^13.3.3":
+"@textlint/ast-node-types@npm:^13.0.0":
   version: 13.3.3
   resolution: "@textlint/ast-node-types@npm:13.3.3"
   checksum: 88ddee67533f9be705dd035922d3820bf14cdb3f44a5592ec5fe93b79e1b223f2e9faadefab14da6544b115702a8bc45d5f2457cb9f00d63b6f8559f8eeb3e5a
   languageName: node
   linkType: hard
 
-"@textlint/markdown-to-ast@npm:^13.0.0":
-  version: 13.3.3
-  resolution: "@textlint/markdown-to-ast@npm:13.3.3"
+"@textlint/ast-node-types@npm:^13.4.1":
+  version: 13.4.1
+  resolution: "@textlint/ast-node-types@npm:13.4.1"
+  checksum: 97655c33bbd15760d319b9d63a23ef7e6247c8a2091118ec3400f799f364502f3b6f4eab0a9b2cb470d089aaa19196f3f2a9de649fdc012f58f1f935fa26ae92
+  languageName: node
+  linkType: hard
+
+"@textlint/markdown-to-ast@npm:^13.4.1":
+  version: 13.4.1
+  resolution: "@textlint/markdown-to-ast@npm:13.4.1"
   dependencies:
-    "@textlint/ast-node-types": "npm:^13.3.3"
+    "@textlint/ast-node-types": "npm:^13.4.1"
     debug: "npm:^4.3.4"
     mdast-util-gfm-autolink-literal: "npm:^0.1.3"
     remark-footnotes: "npm:^3.0.0"
@@ -1040,7 +1047,7 @@ __metadata:
     remark-parse: "npm:^9.0.0"
     traverse: "npm:^0.6.7"
     unified: "npm:^9.2.2"
-  checksum: 28aff877387062a18568fb30ed5ce0bd70da2b2051255d53023aaddd5b8f9dac190e1bae9addccac3257aca4396b6423ada41f3a41b762a866570073c050bab2
+  checksum: 119f5f47ba4a58f145b2942ce1cffd004889d9477dde6242ee880d34b82695cd89277f3df82638628539019a81421b8eca466e0e5213d3fdce4877cc0f93322e
   languageName: node
   linkType: hard
 
