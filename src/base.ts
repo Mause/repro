@@ -32,6 +32,11 @@ export const sharedArgs = (description: string) => ({
 });
 
 export default abstract class extends Command {
+  constructor() {
+    super();
+    console.log(this.config.themes);
+  }
+
   protected async loadToDisk(issue: any): Promise<string[]> {
     const query = await extract(issue);
     const { owner, repo, issueNumber } = query;
