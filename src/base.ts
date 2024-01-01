@@ -1,4 +1,4 @@
-import { Args, Command } from "@oclif/core";
+import { Args, Command, Config } from "@oclif/core";
 import { Octokit, RestEndpointMethodTypes } from "@octokit/rest";
 import { TxtNode, ASTNodeTypes } from "@textlint/ast-node-types";
 import { parse } from "@textlint/markdown-to-ast";
@@ -32,7 +32,7 @@ export const sharedArgs = (description: string) => ({
 });
 
 export default abstract class extends Command {
-  constructor(a, b) {
+  constructor(a: string[], b: Config) {
     super(a, b);
     console.log(this.config.theme);
   }
