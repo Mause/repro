@@ -32,9 +32,9 @@ export const sharedArgs = (description: string) => ({
 });
 
 export default abstract class extends Command {
-  constructor() {
-    super();
-    console.log(this.config.themes);
+  constructor(a, b) {
+    super(a, b);
+    console.log(this.config.theme);
   }
 
   protected async loadToDisk(issue: any): Promise<string[]> {
