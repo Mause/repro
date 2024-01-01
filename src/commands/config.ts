@@ -1,4 +1,4 @@
-import { Args, Command } from "@oclif/core";
+import { Command } from "@oclif/core";
 
 export default class Config extends Command {
   static description = "Dumps current config";
@@ -6,10 +6,7 @@ export default class Config extends Command {
   async run(): Promise<void> {
     console.log("Config");
     console.log("------");
-    console.log(this
-                .config
-
-                .configDir);
-                console.log(this.config.theme);
+    console.log(this.config.configDir);
+    console.log(this.config.theme);
   }
 }
