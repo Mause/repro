@@ -214,7 +214,7 @@ __metadata:
     lint-staged: "npm:>=13"
     lodash: "npm:^4.17.21"
     mocha: "npm:^10.2.0"
-    oclif: "npm:^4.0.3"
+    oclif: "npm:^4.1.0"
     prettier: "npm:^3.0.0"
     shx: "npm:^0.3.4"
     supports-hyperlinks: "npm:^3.0.0"
@@ -6805,9 +6805,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oclif@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "oclif@npm:4.0.3"
+"oclif@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "oclif@npm:4.1.0"
   dependencies:
     "@oclif/core": "npm:^3.0.4"
     "@oclif/plugin-help": "npm:^5.2.14"
@@ -6829,7 +6829,7 @@ __metadata:
     yeoman-generator: "npm:^5.8.0"
   bin:
     oclif: bin/run.js
-  checksum: b296b697d83b9f2d319706d874492a8a974a8478a3de2ccceabf9d7d93fa8a72db7e92c2e18a76f645ba389f7b5d5ca4435b14cbfb7bda7e83257cfae32abd8a
+  checksum: b22f91c7a8f76ff340c42558b8dc7984575b3e15e8cc69956925730b69ca2872a8cbb5f773830dfbd435648b909d030befeab12c1ada1b83f11074026143a93c
   languageName: node
   linkType: hard
 
