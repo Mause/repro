@@ -187,7 +187,7 @@ __metadata:
   dependencies:
     "@oclif/core": "npm:^3.15.1"
     "@oclif/plugin-help": "npm:^6.0.0"
-    "@oclif/plugin-warn-if-update-available": "npm:^3.0.0"
+    "@oclif/plugin-warn-if-update-available": "npm:^3.0.8"
     "@oclif/test": "npm:^3.1.8"
     "@octokit/rest": "npm:^20.0.0"
     "@textlint/ast-node-types": "npm:^13.0.0"
@@ -652,6 +652,19 @@ __metadata:
     http-call: "npm:^5.2.2"
     lodash.template: "npm:^4.5.0"
   checksum: e80fcd2c7472d3d73a71b19e655702724357ea520acb37e13c55a016e67d3f8514ee5ee7a9d998bf0c60f9b626f502610a726fe61cd75e5243974b2b0e139014
+  languageName: node
+  linkType: hard
+
+"@oclif/plugin-warn-if-update-available@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "@oclif/plugin-warn-if-update-available@npm:3.0.8"
+  dependencies:
+    "@oclif/core": "npm:^3.15.1"
+    chalk: "npm:^5.3.0"
+    debug: "npm:^4.1.0"
+    http-call: "npm:^5.2.2"
+    lodash.template: "npm:^4.5.0"
+  checksum: e8e9d6aa44152dce2d0e80e86f2b9eeff1a344001f98c45076c5368eb0d83e61c74e9ed44a5e1131fcff9952bc4064eb2030aaede85c3c33f0edc15ffd68091b
   languageName: node
   linkType: hard
 
