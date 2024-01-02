@@ -1,6 +1,6 @@
 {
   "name": "@mause/repro",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "description": "Simple tool to quickly run reproduction code from a GitHub issue",
   "author": "Elliana May @Mause",
   "bin": "./bin/run",
@@ -15,42 +15,41 @@
     "/oclif.manifest.json"
   ],
   "dependencies": {
-    "@oclif/core": "^3.9.2",
-    "@oclif/plugin-help": "^6.0.0",
-    "@oclif/plugin-warn-if-update-available": "^3.0.0",
+    "@oclif/core": "^3.15.1",
+    "@oclif/plugin-help": "^6.0.9",
+    "@oclif/plugin-warn-if-update-available": "^3.0.8",
     "@octokit/rest": "^20.0.0",
     "@textlint/ast-node-types": "^13.0.0",
     "@textlint/markdown-to-ast": "^13.4.1",
-    "chalk": "^5.2.0",
     "cli-highlight": "^2.1.11",
     "highlight.js": "^11.9.0",
     "hyperlinker": "^1.0.0",
     "inquirer": "^9.2.12",
     "lodash": "^4.17.21",
-    "prettier": "^3.0.0",
+    "prettier": "^3.1.1",
     "supports-hyperlinks": "^3.0.0"
   },
   "devDependencies": {
-    "@oclif/test": "^3.0.4",
+    "@oclif/test": "^3.1.8",
     "@types/chai": "^4",
     "@types/inquirer": "^9.0.7",
     "@types/mocha": "^10.0.3",
     "@types/node": "^18.18.8",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
     "@typescript-eslint/parser": "^6.9.1",
     "chai": "^4",
     "eslint": "^8.53.0",
     "eslint-config-oclif": "^5.0.0",
     "eslint-config-oclif-typescript": "^2.0.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-unicorn": "^49.0.0",
     "globby": "14.0.0",
     "husky": ">=8",
     "lint-staged": ">=13",
     "mocha": "^10.2.0",
-    "oclif": "^4.0.3",
+    "oclif": "^4.1.0",
     "shx": "^0.3.4",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
     "typescript": "^5.0.0"
   },
@@ -83,8 +82,8 @@
   "types": "dist/index.d.ts",
   "lint-staged": {
     "*.ts": [
-      "eslint --cache --fix",
-      "prettier --write"
+      "yarn eslint --cache --fix",
+      "yarn prettier --write"
     ]
   },
   "packageManager": "yarn@4.0.2"
