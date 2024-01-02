@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.4](https://github.com/Mause/repro/compare/v0.5.3...v0.5.4) (2024-01-02)
+
+
+### Bug Fixes
+
+* config command delim ([5d6d6cd](https://github.com/Mause/repro/commit/5d6d6cd4dac3103c9463ca9c99653b83b89b4274))
+
 ## [0.5.3](https://github.com/Mause/repro/compare/v0.5.2...v0.5.3) (2024-01-01)
 
 
