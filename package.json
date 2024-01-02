@@ -83,8 +83,8 @@
   "types": "dist/index.d.ts",
   "lint-staged": {
     "*.ts": [
-      "eslint --cache --fix",
-      "prettier --write"
+      "yarn eslint --cache --fix",
+      "yarn prettier --write"
     ]
   },
   "packageManager": "yarn@4.0.2"
