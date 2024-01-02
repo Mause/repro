@@ -7,6 +7,7 @@ export default class Config extends Command {
     console.log("Config");
     console.log("------");
     console.log(this.config.configDir);
+    console.log("------");
     console.log(this.config.theme);
   }
 }
