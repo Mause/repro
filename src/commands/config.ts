@@ -1,4 +1,5 @@
-import { Command, ux, Flags } from "@oclif/core";
+import { Flags } from "@oclif/core";
+import Base from "../base";
 import * as path from "node:path";
 import * as fs from "node:fs/promises";
 
@@ -22,7 +23,7 @@ const DEFAULT = {
   version: "white",
 };
 
-export default class Config extends Command {
+export default class Config extends Base {
   static description = "Dumps current config";
 
   static flags = {
@@ -35,22 +36,15 @@ export default class Config extends Command {
   };
 
   async run(): Promise<void> {
-    this.log("Config");
-    this.log("------");
     const { configDir, theme } = this.config;
-    this.log(`Config dir: ${configDir}`);
+    this.line(`Config dir: `, `${configDir}`);
     const themePath = path.join(configDir, "theme.json");
-    this.log("------");
-    this.log("Theme: " + JSON.stringify(theme, undefined, 2));
+    this.line("Theme: ", JSON.stringify(theme, undefined, 2));
 
     const { flags } = await this.parse(Config);
 
     if (flags["default-config"]) {
       await writeJsonFile(themePath, DEFAULT);
     }
-  }
-
-  public info(msg: string): void {
-    this.log(ux.colorize(this.config.theme?.info, "info:"), msg);
   }
 }

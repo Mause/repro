@@ -1,4 +1,4 @@
-import { Args, Command } from "@oclif/core";
+import { Args, Command, ux } from "@oclif/core";
 import { Octokit, RestEndpointMethodTypes } from "@octokit/rest";
 import { TxtNode, ASTNodeTypes } from "@textlint/ast-node-types";
 import { parse } from "@textlint/markdown-to-ast";
@@ -8,20 +8,8 @@ import hljs from "highlight.js";
 import _ from "lodash";
 import { supportsHyperlink } from "supports-hyperlinks";
 import hyperlinker from "hyperlinker";
-// eslint-disable-next-line unicorn/import-style
-import type { ChalkInstance } from "chalk";
-
-// eslint-disable-next-line no-new-func, unicorn/prefer-top-level-await
-const chalk = new Function('return import("chalk")')().then(
-  (chalk: any) => chalk.default as ChalkInstance,
-);
 
 const { issues } = new Octokit();
-
-export const line = async (key: string, value: any) => {
-  const chalkInstance = await chalk;
-  return console.log(`${chalkInstance.blue(key)}: %s`, value);
-};
 
 export const sharedArgs = (description: string) => ({
   issue: Args.string({
@@ -64,15 +52,19 @@ export default abstract class extends Command {
           { mode: "755" },
         );
 
-        line("Written to", filename);
+        this.line("Written to", filename);
 
         return filename;
       }),
     );
 
     if (filenames.length === 0) {
-      const chalkInstance = await chalk;
-      this.warn(chalkInstance.red("No supported code blocks found"));
+      this.warn(
+        ux.colorize(
+          this.config.theme?.warn ?? "red",
+          "No supported code blocks found",
+        ),
+      );
     }
 
     return filenames;
@@ -82,7 +74,7 @@ export default abstract class extends Command {
     query: { owner: string; repo: string; issueNumber: number },
     details: RestEndpointMethodTypes["issues"]["get"]["response"],
   ) {
-    line("Repo", `${query.owner}/${query.repo}`);
+    this.line("Repo", `${query.owner}/${query.repo}`);
     let { title } = details.data;
     // eslint-disable-next-line camelcase
     const { html_url } = details.data;
@@ -91,10 +83,14 @@ export default abstract class extends Command {
       title = hyperlinker(title, html_url);
     }
 
-    line("Issue", title);
+    this.line("Issue", title);
     if (!links) {
-      line("Url", html_url);
+      this.line("Url", html_url);
     }
+  }
+
+  public async line(key: string, value: any) {
+    this.log(ux.colorize(this.config.theme?.info ?? "blue", key), value);
   }
 }
 
