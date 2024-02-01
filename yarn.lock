@@ -206,7 +206,7 @@ __metadata:
   dependencies:
     "@oclif/core": "npm:^3.15.1"
     "@oclif/plugin-help": "npm:^6.0.9"
-    "@oclif/plugin-warn-if-update-available": "npm:^3.0.8"
+    "@oclif/plugin-warn-if-update-available": "npm:^3.0.9"
     "@oclif/test": "npm:^3.1.8"
     "@octokit/rest": "npm:^20.0.0"
     "@textlint/ast-node-types": "npm:^13.0.0"
@@ -632,6 +632,41 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@oclif/core@npm:^3.16.0":
+  version: 3.18.2
+  resolution: "@oclif/core@npm:3.18.2"
+  dependencies:
+    "@types/cli-progress": "npm:^3.11.5"
+    ansi-escapes: "npm:^4.3.2"
+    ansi-styles: "npm:^4.3.0"
+    cardinal: "npm:^2.1.1"
+    chalk: "npm:^4.1.2"
+    clean-stack: "npm:^3.0.1"
+    cli-progress: "npm:^3.12.0"
+    color: "npm:^4.2.3"
+    debug: "npm:^4.3.4"
+    ejs: "npm:^3.1.9"
+    get-package-type: "npm:^0.1.0"
+    globby: "npm:^11.1.0"
+    hyperlinker: "npm:^1.0.0"
+    indent-string: "npm:^4.0.0"
+    is-wsl: "npm:^2.2.0"
+    js-yaml: "npm:^3.14.1"
+    natural-orderby: "npm:^2.0.3"
+    object-treeify: "npm:^1.1.33"
+    password-prompt: "npm:^1.1.3"
+    slice-ansi: "npm:^4.0.0"
+    string-width: "npm:^4.2.3"
+    strip-ansi: "npm:^6.0.1"
+    supports-color: "npm:^8.1.1"
+    supports-hyperlinks: "npm:^2.2.0"
+    widest-line: "npm:^3.1.0"
+    wordwrap: "npm:^1.0.0"
+    wrap-ansi: "npm:^7.0.0"
+  checksum: 10c0/11ff5ecab0a8dc6c291bf66714b0823afd2495704c409b6c58fd802cce880facde554163f1044d93c38ca4c59877b05c6e333f234f3b487851ae969af84b366e
+  languageName: node
+  linkType: hard
+
 "@oclif/plugin-help@npm:^5.2.14":
   version: 5.2.20
   resolution: "@oclif/plugin-help@npm:5.2.20"
@@ -674,16 +709,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oclif/plugin-warn-if-update-available@npm:^3.0.8":
-  version: 3.0.8
-  resolution: "@oclif/plugin-warn-if-update-available@npm:3.0.8"
+"@oclif/plugin-warn-if-update-available@npm:^3.0.9":
+  version: 3.0.9
+  resolution: "@oclif/plugin-warn-if-update-available@npm:3.0.9"
   dependencies:
-    "@oclif/core": "npm:^3.15.1"
+    "@oclif/core": "npm:^3.16.0"
     chalk: "npm:^5.3.0"
     debug: "npm:^4.1.0"
     http-call: "npm:^5.2.2"
     lodash.template: "npm:^4.5.0"
-  checksum: 10c0/e8e9d6aa44152dce2d0e80e86f2b9eeff1a344001f98c45076c5368eb0d83e61c74e9ed44a5e1131fcff9952bc4064eb2030aaede85c3c33f0edc15ffd68091b
+  checksum: 10c0/a5d0119ad516bb39ab31806df7336af6fcdc9d2181fb2b576813a699d11e9ce50db5a00124f42e2575effb8787dda51c0be6f4ad9cb533934dbf0ef2ac9c467d
   languageName: node
   linkType: hard
 
@@ -1201,6 +1236,15 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/e95ef43e4a6b16bd233343fbff9798cdebded76f0c2f8a740a70bd4ce0608a804b489022765a00bb3447205536e5a032ba76a1a85bd1f050183c0196f91f3741
+  languageName: node
+  linkType: hard
+
+"@types/cli-progress@npm:^3.11.5":
+  version: 3.11.5
+  resolution: "@types/cli-progress@npm:3.11.5"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/bf00f543ee677f61b12e390876df59354943d6c13d96640171528e9b7827f4edb7701cdd4675d6256d13ef9ee542731bd5cae585e1b43502553f69fc210dcb92
   languageName: node
   linkType: hard
 
