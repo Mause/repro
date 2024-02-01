@@ -24,7 +24,7 @@
     "cli-highlight": "^2.1.11",
     "highlight.js": "^11.9.0",
     "hyperlinker": "^1.0.0",
-    "inquirer": "^9.2.12",
+    "inquirer": "^9.2.13",
     "lodash": "^4.17.21",
     "prettier": "^3.1.1",
     "supports-hyperlinks": "^3.0.0"
