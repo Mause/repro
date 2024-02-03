@@ -210,7 +210,7 @@ __metadata:
     "@oclif/test": "npm:^3.1.8"
     "@octokit/rest": "npm:^20.0.0"
     "@textlint/ast-node-types": "npm:^13.0.0"
-    "@textlint/markdown-to-ast": "npm:^13.4.1"
+    "@textlint/markdown-to-ast": "npm:^14.0.0"
     "@types/chai": "npm:^4"
     "@types/inquirer": "npm:^9.0.7"
     "@types/mocha": "npm:^10.0.3"
@@ -1093,27 +1093,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@textlint/ast-node-types@npm:^13.4.1":
-  version: 13.4.1
-  resolution: "@textlint/ast-node-types@npm:13.4.1"
-  checksum: 10c0/97655c33bbd15760d319b9d63a23ef7e6247c8a2091118ec3400f799f364502f3b6f4eab0a9b2cb470d089aaa19196f3f2a9de649fdc012f58f1f935fa26ae92
+"@textlint/ast-node-types@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@textlint/ast-node-types@npm:14.0.0"
+  checksum: 10c0/9663802f4c35cd253f9fba607ae54f571d11fab515691686e7567fb677d5a1235985c8234c3ba702c13739afbfe73cc8e0ee50d20492d98586673545cd9fe539
   languageName: node
   linkType: hard
 
-"@textlint/markdown-to-ast@npm:^13.4.1":
-  version: 13.4.1
-  resolution: "@textlint/markdown-to-ast@npm:13.4.1"
+"@textlint/markdown-to-ast@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@textlint/markdown-to-ast@npm:14.0.0"
   dependencies:
-    "@textlint/ast-node-types": "npm:^13.4.1"
+    "@textlint/ast-node-types": "npm:^14.0.0"
     debug: "npm:^4.3.4"
     mdast-util-gfm-autolink-literal: "npm:^0.1.3"
     remark-footnotes: "npm:^3.0.0"
     remark-frontmatter: "npm:^3.0.0"
     remark-gfm: "npm:^1.0.0"
     remark-parse: "npm:^9.0.0"
-    traverse: "npm:^0.6.7"
+    traverse: "npm:^0.6.8"
     unified: "npm:^9.2.2"
-  checksum: 10c0/119f5f47ba4a58f145b2942ce1cffd004889d9477dde6242ee880d34b82695cd89277f3df82638628539019a81421b8eca466e0e5213d3fdce4877cc0f93322e
+  checksum: 10c0/d8dff883506f33d51c65234cf5c4b643a7a80ff352db0cb2da439bdb250210723b3795b4cccff2a0296896659db5f79143f6bafd714089a2ca8d53c5010a8f4c
   languageName: node
   linkType: hard
 
@@ -9005,10 +9005,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"traverse@npm:^0.6.7":
-  version: 0.6.7
-  resolution: "traverse@npm:0.6.7"
-  checksum: 10c0/97312cbcce0fdc640cf871a33c3f8efa85fbc2e21020bcbbf48b50883db4c41cfef580f3deaab67217291b761be4558fff34aab1baff7eb2b65323412458a489
+"traverse@npm:^0.6.8":
+  version: 0.6.8
+  resolution: "traverse@npm:0.6.8"
+  checksum: 10c0/d97a71be2ca895ff6b813840db37f9b5d88e30f7c4c4bd5b22c5c68ebc22d4a10c4599e02c51414523cc7ada3432e118ea62ebd53cf6f3a4f3aa951bd45072a9
   languageName: node
   linkType: hard
 
