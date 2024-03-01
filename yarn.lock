@@ -220,7 +220,7 @@ __metadata:
     chai: "npm:^4"
     cli-highlight: "npm:^2.1.11"
     eslint: "npm:^8.53.0"
-    eslint-config-oclif: "npm:^5.0.0"
+    eslint-config-oclif: "npm:^5.0.3"
     eslint-config-oclif-typescript: "npm:^2.0.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-unicorn: "npm:^50.0.0"
@@ -3342,15 +3342,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-oclif@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "eslint-config-oclif@npm:5.0.0"
+"eslint-config-oclif@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "eslint-config-oclif@npm:5.0.3"
   dependencies:
-    eslint-config-xo-space: "npm:^0.34.0"
-    eslint-plugin-mocha: "npm:^10.1.0"
+    eslint-config-xo-space: "npm:^0.35.0"
+    eslint-plugin-mocha: "npm:^10.3.0"
     eslint-plugin-node: "npm:^11.1.0"
     eslint-plugin-unicorn: "npm:^48.0.1"
-  checksum: 10c0/06bfb1cd13a371dc3285dbe08eb1469315b177a7db56178a8eb7ea153340536aa9b658890936387a6c67b108957492f4fac8e69e8ac22c63bd45c28167baf524
+  checksum: 10c0/e4460cf59ca9db14217466c48b8085ad91161c018ffac0430d232d550426a55ff132aeaadf7bfc3bf92993e2e86cb677a7986b5cfb38fba178f58058f26931bb
   languageName: node
   linkType: hard
 
@@ -3376,6 +3376,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-xo-space@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "eslint-config-xo-space@npm:0.35.0"
+  dependencies:
+    eslint-config-xo: "npm:^0.44.0"
+  peerDependencies:
+    eslint: ">=8.56.0"
+  checksum: 10c0/2d4f1277643632b36f46ad6ca55f1566623970a47f011b1361b1234a3d64c962f0819862a457fdec5a2d0551fca2b27426d391de56cd1c79645a6f7164e0d35a
+  languageName: node
+  linkType: hard
+
 "eslint-config-xo@npm:^0.43.0":
   version: 0.43.1
   resolution: "eslint-config-xo@npm:0.43.1"
@@ -3384,6 +3395,17 @@ __metadata:
   peerDependencies:
     eslint: ">=8.27.0"
   checksum: 10c0/753026f1eae1648d79921cc51d78d55182966d178093f14e08e09f191ccffabd0292a31c7dc70e65c6c655ac1cdcfa05d7f99e8af4f4164e04834f1bea96dbe0
+  languageName: node
+  linkType: hard
+
+"eslint-config-xo@npm:^0.44.0":
+  version: 0.44.0
+  resolution: "eslint-config-xo@npm:0.44.0"
+  dependencies:
+    confusing-browser-globals: "npm:1.0.11"
+  peerDependencies:
+    eslint: ">=8.56.0"
+  checksum: 10c0/ca051b569f66ffe0d10e93b0a935b2082aa978eccf6691b40a1ced341150eac7eb9bb913cb370bddbd352c6e20cad7854bd3a33a52356e9effeac54d914deac2
   languageName: node
   linkType: hard
 
@@ -3476,6 +3498,18 @@ __metadata:
   peerDependencies:
     eslint: ">=7.0.0"
   checksum: 10c0/21d661a4eae812b04c5b43cd15bc5a19e1baf7d1394727a948e0ffcb3b7cc3d4850aacf0fa50ac9e473b098d6e7dd8b3b42dbe9bdd4a82e8b765c9804a9d92c6
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-mocha@npm:^10.3.0":
+  version: 10.3.0
+  resolution: "eslint-plugin-mocha@npm:10.3.0"
+  dependencies:
+    eslint-utils: "npm:^3.0.0"
+    rambda: "npm:^7.4.0"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  checksum: 10c0/33f46c73dc89dec02b586045875d4e4b74857e96c0a8dcf6071b033bb91bbce30875179732008a5158eea5acd7eb633f59e5f9509b045bd5856cbed67f1aada9
   languageName: node
   linkType: hard
 
