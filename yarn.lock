@@ -228,7 +228,7 @@ __metadata:
     highlight.js: "npm:^11.9.0"
     husky: "npm:>=8"
     hyperlinker: "npm:^1.0.0"
-    inquirer: "npm:^9.2.13"
+    inquirer: "npm:^9.2.15"
     lint-staged: "npm:>=13"
     lodash: "npm:^4.17.21"
     mocha: "npm:^10.2.0"
@@ -4898,9 +4898,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inquirer@npm:^9.2.13":
-  version: 9.2.13
-  resolution: "inquirer@npm:9.2.13"
+"inquirer@npm:^9.2.15":
+  version: 9.2.15
+  resolution: "inquirer@npm:9.2.15"
   dependencies:
     "@ljharb/through": "npm:^2.3.12"
     ansi-escapes: "npm:^4.3.2"
@@ -4917,7 +4917,7 @@ __metadata:
     string-width: "npm:^4.2.3"
     strip-ansi: "npm:^6.0.1"
     wrap-ansi: "npm:^6.2.0"
-  checksum: 10c0/652329bdc380df627abd5edbe81444d39b08c9377c7e839b258679aa2025aa9c30178a5e23691b70018291c3c601b0b6d96f77ac24eae7ab9ec1816f32d68db4
+  checksum: 10c0/c94d5863d4d05aeb1c6acfd30416037da03ecc1d7a9be099faf746000cd17ea134038b46888f5baed7abc0fa8efc1918029db896048d9dfa93610b7c999a1b71
   languageName: node
   linkType: hard
 
