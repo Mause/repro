@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/Mause/repro/compare/v0.5.4...v0.6.0) (2024-04-09)
+
+
+### Features
+
+* add ability to reset config ([02bf940](https://github.com/Mause/repro/commit/02bf940ad138efcf08987edb1e28e710655f0fa4))
+
 ## [0.5.4](https://github.com/Mause/repro/compare/v0.5.3...v0.5.4) (2024-01-02)
 
 
