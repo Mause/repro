@@ -214,7 +214,7 @@ __metadata:
     "@types/chai": "npm:^4"
     "@types/inquirer": "npm:^9.0.7"
     "@types/mocha": "npm:^10.0.3"
-    "@types/node": "npm:^18.18.8"
+    "@types/node": "npm:^18.19.31"
     "@typescript-eslint/eslint-plugin": "npm:^6.17.0"
     "@typescript-eslint/parser": "npm:^6.9.1"
     chai: "npm:^4"
@@ -1281,7 +1281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.18.8":
+"@types/node@npm:*":
   version: 18.18.8
   resolution: "@types/node@npm:18.18.8"
   dependencies:
@@ -1294,6 +1294,15 @@ __metadata:
   version: 15.14.9
   resolution: "@types/node@npm:15.14.9"
   checksum: 10c0/fe5b69cffd20f97c814d568c1d791b3c367f9efa6567a18d2c15cd73c5437f47bcff73a2e10bdfe59f90ce7df47e6cc3c6d431c76d2213bf6099e8ab5d16d355
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.19.31":
+  version: 18.19.31
+  resolution: "@types/node@npm:18.19.31"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10c0/bfebae8389220c0188492c82eaf328f4ba15e6e9b4abee33d6bf36d3b13f188c2f53eb695d427feb882fff09834f467405e2ed9be6aeb6ad4705509822d2ea08
   languageName: node
   linkType: hard
 
