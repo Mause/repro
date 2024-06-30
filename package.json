@@ -43,7 +43,7 @@
     "eslint-config-oclif-typescript": "^2.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-unicorn": "^50.0.0",
-    "globby": "14.0.0",
+    "globby": "14.0.2",
     "husky": ">=8",
     "lint-staged": ">=13",
     "mocha": "^10.2.0",
